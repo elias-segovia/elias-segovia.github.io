@@ -10,7 +10,7 @@
  *  - Nathan Smith <NathanS@harvest.org>
  */
 /*global window, document*/
-(function (exports) {
+(function(exports) {
     'use strict';
 
     var // functions
@@ -24,7 +24,7 @@
      * @param out
      * @returns {*|{}}
      */
-    extend = function (out) {
+    extend = function(out) {
         var i,
             obj,
             key;
@@ -56,7 +56,7 @@
      * @param typeClass
      * @returns {{full: (*|Element), amount: (*|Element), word: (*|Element)}}
      */
-    createCountdownElt = function (countdown, parameters, typeClass) {
+    createCountdownElt = function(countdown, parameters, typeClass) {
         var innerSectionTag,
             sectionTag,
             amountTag,
@@ -91,7 +91,7 @@
      * @param countdown
      * @returns {{days: (*|Element), hours: (*|Element), minutes: (*|Element), seconds: (*|Element)}}
      */
-    createElements = function (parameters, countdown) {
+    createElements = function(parameters, countdown) {
         var spanTag;
 
         if (!parameters.inline) {
@@ -113,11 +113,11 @@
      * @param elt
      * @param args (parameters)
      */
-    simplyCountdown = function (elt, args) {
+    simplyCountdown = function(elt, args) {
         var parameters = extend({
-                year: 2015,
-                month: 6,
-                day: 28,
+                year: 2023,
+                month: 11,
+                day: 11,
                 hours: 0,
                 minutes: 0,
                 seconds: 0,
@@ -131,7 +131,7 @@
                 plural: true,
                 inline: false,
                 enableUtc: true,
-                onEnd: function () {
+                onEnd: function() {
                     return;
                 },
                 refresh: 1000,
@@ -175,11 +175,11 @@
             targetDate = targetTmpDate;
         }
 
-        Array.prototype.forEach.call(cd, function (countdown) {
+        Array.prototype.forEach.call(cd, function(countdown) {
             var fullCountDown = createElements(parameters, countdown),
                 refresh;
 
-            refresh = function () {
+            refresh = function() {
                 var dayWord,
                     hourWord,
                     minuteWord,
@@ -214,21 +214,21 @@
                 }
 
                 if (parameters.plural) {
-                    dayWord = days > 1
-                        ? parameters.words.days + parameters.words.pluralLetter
-                        : parameters.words.days;
+                    dayWord = days > 1 ?
+                        parameters.words.days + parameters.words.pluralLetter :
+                        parameters.words.days;
 
-                    hourWord = hours > 1
-                        ? parameters.words.hours + parameters.words.pluralLetter
-                        : parameters.words.hours;
+                    hourWord = hours > 1 ?
+                        parameters.words.hours + parameters.words.pluralLetter :
+                        parameters.words.hours;
 
-                    minuteWord = minutes > 1
-                        ? parameters.words.minutes + parameters.words.pluralLetter
-                        : parameters.words.minutes;
+                    minuteWord = minutes > 1 ?
+                        parameters.words.minutes + parameters.words.pluralLetter :
+                        parameters.words.minutes;
 
-                    secondWord = seconds > 1
-                        ? parameters.words.seconds + parameters.words.pluralLetter
-                        : parameters.words.seconds;
+                    secondWord = seconds > 1 ?
+                        parameters.words.seconds + parameters.words.pluralLetter :
+                        parameters.words.seconds;
 
                 } else {
                     dayWord = parameters.words.days;
@@ -271,14 +271,14 @@
 
 /*global $, jQuery, simplyCountdown*/
 if (window.jQuery) {
-    (function ($, simplyCountdown) {
+    (function($, simplyCountdown) {
         'use strict';
 
         function simplyCountdownify(el, options) {
             simplyCountdown(el, options);
         }
 
-        $.fn.simplyCountdown = function (options) {
+        $.fn.simplyCountdown = function(options) {
             return simplyCountdownify(this.selector, options);
         };
     }(jQuery, simplyCountdown));
