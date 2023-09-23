@@ -516,7 +516,7 @@
                 <p>
                     <b><i class="icon-heart2"></i> Elías &amp; Belén <i class="icon-heart2"></i></b><br>
                     <small>11/11/2023</small><br>
-                    <small class="block">&copy; Todos los derechos reservaods.</small>
+                    <small class="block">&copy; Todos los derechos reservados.</small>
                 </p>
             </div>
         </div>
@@ -552,19 +552,19 @@
 
         <script>
             // var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
-            var d = new Date(2023, 10, 11);
+            var d = new Date(2023, 11, 11);
 
             // default example
             simplyCountdown('.simply-countdown-one', {
                 year: d.getFullYear(),
-                month: d.getMonth() + 1,
-                day: d.getDate()
+                month: d.getMonth(),
+                hour: d.getHours()
             });
 
             //jQuery example
             $('#simply-countdown-losange').simplyCountdown({
                 year: d.getFullYear(),
-                month: d.getMonth() + 1,
+                month: d.getMonth(),
                 day: d.getDate(),
                 enableUtc: false
             });
