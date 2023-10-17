@@ -926,14 +926,14 @@ form label {
 }
 
 @media (min-width: 500px) {
-  #fh5co-header {
-    background-image: url(../images/foto/bg2_1.jpg);
+  #fh5co-event {
+    background-image: url(../images/foto/info2.jpg);
   }
 }
 
 @media (max-width: 500px) {
-  #fh5co-header {
-    background-image: url(../images/foto/bg3.jpg);
+  #fh5co-event {
+    background-image: url(../images/foto/info2_m.jpg);
   }
 }
 
@@ -2117,3 +2117,9 @@ form label {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+/* custom */
+.text-blanco {
+  color: white !important;
+  font-weight: 600 !important;
+}
