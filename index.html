@@ -3,7 +3,7 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js">
+<html>
 <!--<![endif]-->
 
 <head>
@@ -65,11 +65,10 @@
 					<div class="col-md-6 text-right menu-1">
 						<ul>
 							<li class="active"><a href="index.html">Home</a></li>
-							<li><a href="#Asistencia" onclick="Redirect('Asistencia')" type="button">Asistencia</a></li>
-							<li><a href="#Info" onclick="Redirect('Info')">Información</a></li>
-							<li><a href="#Galeria" onclick="Redirect('Galeria')">Galería</a></li>
+							<li><a href="#Asistencia">Asistencia</a></li>
+							<li><a href="#Info">Información</a></li>
+							<li><a href="#Galeria">Galería</a></li>
 							<li><a href="~/../images/invitacion.png" download="invitacion.png">Descargar</a></li>
-							<li><a href="#Asistencia" class="">Confirma asistencia</a></li>
 						</ul>
 					</div>
 				</div>
@@ -568,19 +567,6 @@
 				day: d.getDate(),
 				enableUtc: false
 			});
-		</script>
-
-		<script>
-			function Redirect(id) {
-				const targetElement = document.getElementById(id);
-
-				if (targetElement) {
-					window.scrollTo({
-						top: targetElement.offsetTop,
-						behavior: 'smooth'
-					});
-				}
-			}
 		</script>
 
 </body>
