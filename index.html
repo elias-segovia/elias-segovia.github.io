@@ -65,9 +65,9 @@
 					<div class="col-md-6 text-right menu-1">
 						<ul>
 							<li class="active"><a href="index.html">Home</a></li>
-							<li><a href="#Asistencia" onclick="Asistencia()">Asistencia</a></li>
-							<li><a href="#Info" onclick="Info()">Información</a></li>
-							<li><a href="#Galeria" onclick="Galeria()">Galería</a></li>
+							<li><a href="#Asistencia" onclick="Redirect('Asistencia')" type="button">Asistencia</a></li>
+							<li><a href="#Info" onclick="Redirect('Info')">Información</a></li>
+							<li><a href="#Galeria" onclick="Redirect('Galeria')">Galería</a></li>
 							<li><a href="~/../images/invitacion.png" download="invitacion.png">Descargar</a></li>
 						</ul>
 					</div>
@@ -242,36 +242,34 @@
 		<!-- #endregion fin nosotros -->
 
 		<!-- #region asistencia -->
-		<div id="Asistencia">
-			<div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/foto/belu-8.jpg);">
-				<div class="overlay"></div>
-				<div class="container">
-					<div class="row animate-box">
-						<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-							<h2>Confirmar tu asistencia</h2>
-							<p class="text-blanco">
-								Una cosa importante, es que nos puedas confirmar tu asistencia,
-								así nos resulta mucho más fácil la organización.
-							</p>
-						</div>
+		<div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/foto/belu-8.jpg);">
+			<div class="overlay"></div>
+			<div id="Asistencia" class="container">
+				<div class="row animate-box">
+					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+						<h2>Confirmar tu asistencia</h2>
+						<p class="text-blanco">
+							Una cosa importante, es que nos puedas confirmar tu asistencia,
+							así nos resulta mucho más fácil la organización.
+						</p>
 					</div>
-					<div class="row animate-box">
-						<div class="col-md-10 col-md-offset-1">
-							<form class="form-inline">
-								<div class="col-md-6 col-sm-4" style="padding-top: 20px;">
-									<a href="https://wa.me/5491151135849?text=¡Hola%20Eli,%20confirmo%20mi%20asistencia%20al%20casamiento!"
-										target="_blank" class="btn btn-default btn-block" style="padding-top: 15px;">
-										Confirmar al novio
-									</a>
-								</div>
-								<div class="col-md-6 col-sm-4" style="padding-top: 20px;">
-									<a href="https://wa.me/5491124652381?text=¡Hola%20Belu,%20confirmo%20mi%20asistencia%20al%20casamiento!"
-										target="_blank" class="btn btn-default btn-block" style="padding-top: 15px;">
-										Confirmar a la novia
-									</a>
-								</div>
-							</form>
-						</div>
+				</div>
+				<div class="row animate-box">
+					<div class="col-md-10 col-md-offset-1">
+						<form class="form-inline">
+							<div class="col-md-6 col-sm-4" style="padding-top: 20px;">
+								<a href="https://wa.me/5491151135849?text=¡Hola%20Eli,%20confirmo%20mi%20asistencia%20al%20casamiento!"
+									target="_blank" class="btn btn-default btn-block" style="padding-top: 15px;">
+									Confirmar al novio
+								</a>
+							</div>
+							<div class="col-md-6 col-sm-4" style="padding-top: 20px;">
+								<a href="https://wa.me/5491124652381?text=¡Hola%20Belu,%20confirmo%20mi%20asistencia%20al%20casamiento!"
+									target="_blank" class="btn btn-default btn-block" style="padding-top: 15px;">
+									Confirmar a la novia
+								</a>
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -572,18 +570,16 @@
 		</script>
 
 		<script>
-			$(document).ready(function () {
-				$('a[href^="#"]').on('click', function (event) {
-					var target = $(this.getAttribute('href'));
-					if (target.length) {
-						event.preventDefault();
-						$('html, body').stop().animate({
-							scrollTop: target.offset().top
-						}, 1000); // La duración del desplazamiento en milisegundos
-					}
-				});
-			});
+			function Redirect(id) {
+				const targetElement = document.getElementById(id);
 
+				if (targetElement) {
+					window.scrollTo({
+						top: targetElement.offsetTop,
+						behavior: 'smooth'
+					});
+				}
+			}
 		</script>
 
 </body>
